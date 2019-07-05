@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MyTest.iml" filepath="$PROJECT_DIR$/../MyTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../calendarapp/calendarapp.iml" filepath="$PROJECT_DIR$/../calendarapp/calendarapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../calendarview/calendarview.iml" filepath="$PROJECT_DIR$/../calendarview/calendarview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/listviewqiantao.iml" filepath="$PROJECT_DIR$/listviewqiantao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../poxyretrofit/poxyretrofit.iml" filepath="$PROJECT_DIR$/../poxyretrofit/poxyretrofit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spinner_custom/spinner_custom.iml" filepath="$PROJECT_DIR$/../spinner_custom/spinner_custom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../testretrofit/testretrofit.iml" filepath="$PROJECT_DIR$/../testretrofit/testretrofit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../timepicker/timepicker.iml" filepath="$PROJECT_DIR$/../timepicker/timepicker.iml" />
+    </modules>
+  </component>
+</project>

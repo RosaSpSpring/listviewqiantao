@@ -1,5 +1,14 @@
 package com.ko.listviewqiantao;
 
+import android.nfc.FormatException;
+import android.support.annotation.NonNull;
+
+import java.text.DateFormat;
+import java.text.Format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -9,7 +18,8 @@ import java.util.List;
  * @updateDes ${TODO}
  * @updateAuthor $Author$
  */
-public class CurrentBean {
+public class CurrentBean implements Comparable{
+
 
 	/**
 	 * msg : success
@@ -35,7 +45,32 @@ public class CurrentBean {
 		this.data = data;
 	}
 
-	public static class DataBean {
+	@Override
+	public int compareTo(@NonNull Object o) {
+		return 0;
+	}
+
+	public static class DataBean implements Comparable{
+		public DataBean() {
+		}
+
+		public DataBean(String id, String name, String date) {
+			this.id = id;
+			this.name = name;
+			this.date = date;
+		}
+
+		public DataBean(String id, String name, String daici, String caozuo, String pingshu, String date, String operator, List<ItemBean.DataBean> list_child) {
+			this.id = id;
+			this.name = name;
+			this.daici = daici;
+			this.caozuo = caozuo;
+			this.pingshu = pingshu;
+			this.date = date;
+			this.operator = operator;
+			this.list_child = list_child;
+		}
+
 		/**
 		 * id : 1
 		 * name : hela
@@ -53,6 +88,15 @@ public class CurrentBean {
 		private String pingshu;
 		private String date;
 		private String operator;
+
+		private List<ItemBean.DataBean> list_child = new ArrayList<ItemBean.DataBean>();
+		public List<ItemBean.DataBean> getList_child() {
+			return list_child;
+		}
+
+		public void setList_child(List<ItemBean.DataBean> list_child) {
+			this.list_child = list_child;
+		}//致使父类和子类相关联，致使数据不会混乱排序
 
 		public String getId() {
 			return id;
@@ -108,6 +152,19 @@ public class CurrentBean {
 
 		public void setOperator(String operator) {
 			this.operator = operator;
+		}
+
+		@Override
+		public int compareTo(@NonNull Object o) {
+			SimpleDateFormat dateFormat = new SimpleDateFormat( "yyyy/MM/dd" );
+			if (o instanceof DataBean) {
+				DataBean dataBean = (DataBean) o;
+//				String parse = dateFormat.format( this.getDate() );
+//				String obj = dateFormat.format( dataBean.getDate() );
+				return  - this.getDate().compareTo( dataBean.getDate() );
+			}
+			throw new RuntimeException( "数据类型不匹配" );
+
 		}
 	}
 }
